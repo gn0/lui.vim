@@ -32,6 +32,12 @@ Query with the contents of the current buffer as context, using a pre-specified 
 :%Lui @english
 ```
 
+Reuse the last scratch buffer for displaying the response:
+
+```vim
+:%Lui! @english
+```
+
 Send contents of a visual block as context, after selecting the block in visual mode:
 
 ```vim
