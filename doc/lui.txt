@@ -1,0 +1,37 @@
+*lui.txt*  Feeding context to Lui for LLM queries
+
+Author:  Gábor Nyéki
+License: CC0
+
+INTRODUCTION                                    *lui*
+
+This plugin provides commands for feeding buffer content to Lui, a
+command-line utility for interacting with local LLMs.
+
+Lui can be installed with Cargo.  You can read more about it on crates.io:
+
+  https://crates.io/crates/lui
+
+COMMANDS                                        *lui-commands*
+
+                                         *:Lui* *lui-:Lui*
+:[range]Lui [arguments]  Launch Lui with the specified arguments.  If a range
+                         is specified (which is optional), then the contents
+                         of the range are fed to Lui on stdin.
+                         Examples: >
+                           :Lui -m gemma3:27b '10 synonyms for "joy":'
+                           :%Lui 'rewrite this script from python to bash'
+<                         Visual blocks can specify ranges, too.  An example
+                         with a prompt called `english` that is pre-specified
+                         in `~/.config/lui/config.toml`: >
+                           :'<,'>Lui @english
+<
+                                         *:Lui!* *lui-:Lui!*
+:[range]Lui! [arguments] Same as |:Lui| but instead of opening a new scratch
+                         window to display the response, reuse the last
+                         scratch window.
+
+                                         *:LuiStop* *lui-:LuiStop*
+:LuiStop                 Stop the Lui query currently running.
+
+vim:tw=78:et:ft=help:norl:
